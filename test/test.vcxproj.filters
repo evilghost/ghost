@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="入口">
+      <UniqueIdentifier>{9cfc52f6-685b-46c6-8a9f-05c01f0a5ed0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>入口</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
