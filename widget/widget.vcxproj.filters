@@ -10,6 +10,9 @@
     <Filter Include="头文件">
       <UniqueIdentifier>{c48b1a22-c4da-4805-aedf-d2395c7dfdbf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="随时杂记">
+      <UniqueIdentifier>{d93ea5a3-0d47-47f2-b15e-cb8bc14c3156}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WidgetContainer.cpp">
@@ -29,5 +32,10 @@
     <ClInclude Include="Widget.h">
       <Filter>头文件</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Widget System.mmap">
+      <Filter>随时杂记</Filter>
+    </None>
   </ItemGroup>
 </Project>
