@@ -13,6 +13,15 @@
     <Filter Include="随时杂记">
       <UniqueIdentifier>{d93ea5a3-0d47-47f2-b15e-cb8bc14c3156}</UniqueIdentifier>
     </Filter>
+    <Filter Include="可关联代理">
+      <UniqueIdentifier>{e53f1871-adeb-4772-97fd-fca5cd7dbf0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="可关联代理\容器代理">
+      <UniqueIdentifier>{618dcfe5-3040-4eb0-be5f-88fee7a428d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="可关联代理\组件代理">
+      <UniqueIdentifier>{3bc572fd-a4df-4a0a-af7f-f4b785018e3a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WidgetContainer.cpp">
@@ -20,6 +29,12 @@
     </ClCompile>
     <ClCompile Include="WidgetView.cpp">
       <Filter>组件</Filter>
+    </ClCompile>
+    <ClCompile Include="WidgetContainerViewAssociateableProxy.cpp">
+      <Filter>可关联代理\容器代理</Filter>
+    </ClCompile>
+    <ClCompile Include="WidgetViewContainerAssociateableProxy.cpp">
+      <Filter>可关联代理\组件代理</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -31,6 +46,12 @@
     </ClInclude>
     <ClInclude Include="Widget.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="WidgetContainerViewAssociateableProxy.h">
+      <Filter>可关联代理\容器代理</Filter>
+    </ClInclude>
+    <ClInclude Include="WidgetViewContainerAssociateableProxy.h">
+      <Filter>可关联代理\组件代理</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -6,6 +6,7 @@
 #include "NoCopyable.h"
 #include "Cloneable.h"
 #include "Associateable.h"
+#include "AssociateableProxy.h"
 
 #ifdef _DEBUG
 

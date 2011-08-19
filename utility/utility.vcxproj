@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Associateable.h" />
+    <ClInclude Include="AssociateableProxy.h" />
     <ClInclude Include="Cloneable.h" />
     <ClInclude Include="NoCopyable.h" />
     <ClInclude Include="Structures.h" />

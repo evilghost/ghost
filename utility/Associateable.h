@@ -20,6 +20,7 @@ namespace ghost{
 			{
 				return true;
 			}
+			/**派生类必须实现此接口，并在自身析构时调用*/
 			virtual void DisassociateFromAll() = 0;
 
 		private:

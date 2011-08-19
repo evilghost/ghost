@@ -6,14 +6,13 @@ namespace ghost{
 
 	namespace widget{
 
-		View::View()
-			: m_pContainer(0)
+		View::View() 
+			: m_containerAssociateable(*this)
 		{
 		}
 
 		View::~View()
 		{
-			DisassociateFromAll();
 		}
 
 		View* View::Clone()
@@ -28,33 +27,25 @@ namespace ghost{
 			if (pObj)
 			{
 				// 克隆子View
+				// 设置克隆的子View的父view为克隆的View
 			}
 			return pObj;
 		}
 
-		bool View::AllowAssociatingWidth(Associateable* pObj) const
+		bool View::SetContainer(Container* pContainer)
 		{
-			return 0 != dynamic_cast<Container*>(pObj);
+			if (!pContainer)
+			{
+				// 取消Container关联
+				m_containerAssociateable.DisassociateFromAll();
+				return true;
+			}
+			return m_containerAssociateable.AssociateWith(&pContainer->GetViewAssociateableProxy());
 		}
 
-		void View::DisassociateFromAll()
+		Container* View::GetContainer() const
 		{
-			DisassociateFrom(m_pContainer);
-		}
-
-		bool View::IsAssociatedWidth(Associateable* pObj) const
-		{
-			return dynamic_cast<Container*>(pObj) == m_pContainer;
-		}
-
-		void View::DoAssociateWith(Associateable* pObj)
-		{
-			m_pContainer = dynamic_cast<Container*>(pObj);
-		}
-
-		void View::DoDisassociateFrom(Associateable* pObj)
-		{
-			m_pContainer = 0;
+			return m_containerAssociateable.GetContainer();
 		}
 
 	} // namespace widget

@@ -3,6 +3,7 @@
 #define WIDGET_CONTAINER_H
 
 #include "../utility/Utility.h"
+#include "WidgetContainerViewAssociateableProxy.h"
 
 namespace ghost{
 
@@ -17,16 +18,15 @@ namespace ghost{
 		* 克隆不能克隆容器与平台GUI之间的关联，所以将丢失与平台GUI相关的一些状态或属性
 		*/
 		class Container 
-			: utility::NoCopyable
-			, public utility::Cloneable
-			, public utility::Associateable{
+			: private utility::NoCopyable
+			, public utility::Cloneable{
 		protected:
-			View* m_pRootView;
+			container_proxy::ViewAssociateable m_viewAssociateable;
 
-		public:
+		protected:
 			Container();
 
-		protected:
+		public:
 			virtual ~Container();
 
 		public: // 实现Clonable
@@ -37,21 +37,15 @@ namespace ghost{
 			template<CloneParam p>
 			Container* Clone();
 
-		public: // 实现Associateable
-			virtual bool AllowAssociatingWidth(Associateable* pObj) const;
-			virtual void DisassociateFromAll();
-
-		private: // 实现Associateable
-			virtual bool IsAssociatedWidth(Associateable* pObj) const;
-			virtual void DoAssociateWith(Associateable* pObj);
-			virtual void DoDisassociateFrom(Associateable* pObj);
+		public: // 获取代理对象
+			container_proxy::ViewAssociateable& GetViewAssociateableProxy()
+			{
+				return m_viewAssociateable;
+			}
 
 		public:
 			bool SetRootView(View* pView);
-			View* GetRootView() const
-			{
-				return m_pRootView;
-			}
+			View* GetRootView() const;
 
 		public:
 			virtual bool Invalidate(bool immediately = false) = 0;

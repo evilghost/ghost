@@ -16,6 +16,9 @@
     <Filter Include="结构体">
       <UniqueIdentifier>{9ab0b8db-3799-420d-8369-4fcc468dc32e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="可关联对象\代理">
+      <UniqueIdentifier>{5aaf3593-9424-4edb-9031-1a5afa0b84f5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Associateable.cpp">
@@ -37,6 +40,9 @@
     </ClInclude>
     <ClInclude Include="Structures.h">
       <Filter>结构体</Filter>
+    </ClInclude>
+    <ClInclude Include="AssociateableProxy.h">
+      <Filter>可关联对象\代理</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

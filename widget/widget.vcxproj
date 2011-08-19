@@ -83,13 +83,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="WidgetContainerViewAssociateableProxy.cpp" />
     <ClCompile Include="WidgetView.cpp" />
     <ClCompile Include="WidgetContainer.cpp" />
+    <ClCompile Include="WidgetViewContainerAssociateableProxy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Widget.h" />
+    <ClInclude Include="WidgetContainerViewAssociateableProxy.h" />
     <ClInclude Include="WidgetView.h" />
     <ClInclude Include="WidgetContainer.h" />
+    <ClInclude Include="WidgetViewContainerAssociateableProxy.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Widget System.mmap" />

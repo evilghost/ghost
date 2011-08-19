@@ -11,6 +11,10 @@ namespace ghost{
 			{
 				return false;
 			}
+			if (this == pObj)
+			{
+				return false;
+			}
 			if (IsAssociatedWidth(pObj))
 			{
 				return true;
