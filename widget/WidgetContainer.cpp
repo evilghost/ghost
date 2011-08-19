@@ -7,13 +7,12 @@ namespace ghost{
 	namespace widget{
 
 		Container::Container()
-			: m_pRootView(0)
+			: m_viewAssociateable(*this)
 		{
 		}
 
 		Container::~Container()
 		{
-			DisassociateFromAll();
 		}
 
 		Container* Container::Clone()
@@ -28,40 +27,25 @@ namespace ghost{
 			if (pObj)
 			{
 				// 克隆View树
+				// 关联克隆的View树和克隆的Container
 			}
 			return pObj;
 		}
 
-		bool Container::AllowAssociatingWidth(Associateable* pObj) const
-		{
-			return 0 != dynamic_cast<View*>(pObj);
-		}
-
-		void Container::DisassociateFromAll()
-		{
-			DisassociateFrom(m_pRootView);
-		}
-
-		bool Container::IsAssociatedWidth(Associateable* pObj) const
-		{
-			return dynamic_cast<View*>(pObj) == m_pRootView;
-		}
-
-		void Container::DoAssociateWith(Associateable* pObj)
-		{
-			m_pRootView = dynamic_cast<View*>(pObj);
-			// 对m_pRootView进行必要的初始化
-		}
-
-		void Container::DoDisassociateFrom(Associateable* pObj)
-		{
-			// 对m_pRootView进行必要的清除
-			m_pRootView = 0;
-		}
-
 		bool Container::SetRootView(View* pView)
 		{
-			return AssociateWith(pView);
+			if (!pView)
+			{
+				// 取消根view关联
+				m_viewAssociateable.DisassociateFromAll();
+				return true;
+			}
+			return m_viewAssociateable.AssociateWith(&pView->GetContainerAssociateableProxy());
+		}
+
+		View* Container::GetRootView() const
+		{
+			return m_viewAssociateable.GetRootView();
 		}
 
 	} // namespace widget

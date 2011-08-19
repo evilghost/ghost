@@ -3,6 +3,7 @@
 #define WIDGET_VIEW_H
 
 #include "../utility/Utility.h"
+#include "WidgetViewContainerAssociateableProxy.h"
 
 namespace ghost{
 
@@ -15,13 +16,13 @@ namespace ghost{
 		* 每个View都是一颗树，View负责派发事件到此View的子View树
 		* 不允许C++语法上的拷贝，但允许通过Clone接口进行克隆（可只克隆View本身，也可连同子View树一同克隆）
 		* 克隆不能克隆View与平台GUI之间的关联，所以将丢失与平台GUI相关的一些状态或属性
+		* 同时还会丢失其父view和Container相关的一些状态和属性
 		*/
 		class View 
-			: utility::NoCopyable
-			, public utility::Cloneable
-			, public utility::Associateable{
+			: private utility::NoCopyable
+			, public utility::Cloneable{
 		protected:
-			Container* m_pContainer;
+			view_proxy::ContainerAssociateable m_containerAssociateable;
 
 		public:
 			View();
@@ -35,14 +36,15 @@ namespace ghost{
 			template<CloneParam p>
 			View* Clone();
 
-		public: // 实现Associateable
-			virtual bool AllowAssociatingWidth(Associateable* pObj) const;
-			virtual void DisassociateFromAll();
+		public: // 获取代理对象
+			view_proxy::ContainerAssociateable& GetContainerAssociateableProxy()
+			{
+				return m_containerAssociateable;
+			}
 
-		private: // 实现Associateable
-			virtual bool IsAssociatedWidth(Associateable* pObj) const;
-			virtual void DoAssociateWith(Associateable* pObj);
-			virtual void DoDisassociateFrom(Associateable* pObj);
+		public:
+			bool SetContainer(Container* pContainer);
+			Container* GetContainer() const;
 		};
 
 	} // namespace widget

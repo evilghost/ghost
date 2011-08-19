@@ -4,12 +4,16 @@
 
 namespace ghost{
 
-	struct Rect{
-		int x;
-		int y;
-		int width;
-		int height;
-	};
+	namespace utility{
+
+		struct Rect{
+			int x;
+			int y;
+			int width;
+			int height;
+		};
+
+	} // namespace utility
 
 } // namespace ghost
 
