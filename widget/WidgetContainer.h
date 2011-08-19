@@ -49,7 +49,7 @@ namespace ghost{
 
 		public:
 			virtual bool Invalidate(bool immediately = false) = 0;
-			virtual bool Invalidate(Rect rect, bool immediately = false) = 0;
+			virtual bool Invalidate(utility::Rect rect, bool immediately = false) = 0;
 		};
 
 	} // namespace widget
