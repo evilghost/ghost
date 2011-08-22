@@ -83,17 +83,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="WidgetContainerViewAssociateableProxy.cpp" />
-    <ClCompile Include="WidgetView.cpp" />
-    <ClCompile Include="WidgetContainer.cpp" />
-    <ClCompile Include="WidgetViewContainerAssociateableProxy.cpp" />
+    <ClCompile Include="WContainerAssociateViewProxy.cpp" />
+    <ClCompile Include="WView.cpp" />
+    <ClCompile Include="WContainer.cpp" />
+    <ClCompile Include="WViewAssociateChildrenProxy.cpp" />
+    <ClCompile Include="WViewAssociateContainerProxy.cpp" />
+    <ClCompile Include="WViewAssociateParentProxy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Widget.h" />
-    <ClInclude Include="WidgetContainerViewAssociateableProxy.h" />
-    <ClInclude Include="WidgetView.h" />
-    <ClInclude Include="WidgetContainer.h" />
-    <ClInclude Include="WidgetViewContainerAssociateableProxy.h" />
+    <ClInclude Include="WContainerAssociateViewProxy.h" />
+    <ClInclude Include="WView.h" />
+    <ClInclude Include="WContainer.h" />
+    <ClInclude Include="WViewAssociateChildrenProxy.h" />
+    <ClInclude Include="WViewAssociateContainerProxy.h" />
+    <ClInclude Include="WViewAssociateParentProxy.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Widget System.mmap" />

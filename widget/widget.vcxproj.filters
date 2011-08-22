@@ -22,36 +22,60 @@
     <Filter Include="可关联代理\组件代理">
       <UniqueIdentifier>{3bc572fd-a4df-4a0a-af7f-f4b785018e3a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="可关联代理\组件代理\关联容器">
+      <UniqueIdentifier>{a805c407-b1d3-430e-80a1-d237bc501cc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="可关联代理\容器代理\关联根组件">
+      <UniqueIdentifier>{1e84be3c-7bcd-4adf-a57c-089753886eaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="可关联代理\组件代理\关联父组件">
+      <UniqueIdentifier>{474fa233-0668-4268-8ac4-1973211b2798}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="可关联代理\组件代理\关联子组件">
+      <UniqueIdentifier>{bb8182b5-2337-458a-a463-5e61469f3496}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WidgetContainer.cpp">
-      <Filter>容器</Filter>
-    </ClCompile>
-    <ClCompile Include="WidgetView.cpp">
+    <ClCompile Include="WView.cpp">
       <Filter>组件</Filter>
     </ClCompile>
-    <ClCompile Include="WidgetContainerViewAssociateableProxy.cpp">
-      <Filter>可关联代理\容器代理</Filter>
+    <ClCompile Include="WContainer.cpp">
+      <Filter>容器</Filter>
     </ClCompile>
-    <ClCompile Include="WidgetViewContainerAssociateableProxy.cpp">
-      <Filter>可关联代理\组件代理</Filter>
+    <ClCompile Include="WContainerAssociateViewProxy.cpp">
+      <Filter>可关联代理\容器代理\关联根组件</Filter>
+    </ClCompile>
+    <ClCompile Include="WViewAssociateContainerProxy.cpp">
+      <Filter>可关联代理\组件代理\关联容器</Filter>
+    </ClCompile>
+    <ClCompile Include="WViewAssociateParentProxy.cpp">
+      <Filter>可关联代理\组件代理\关联父组件</Filter>
+    </ClCompile>
+    <ClCompile Include="WViewAssociateChildrenProxy.cpp">
+      <Filter>可关联代理\组件代理\关联子组件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WidgetContainer.h">
-      <Filter>容器</Filter>
-    </ClInclude>
-    <ClInclude Include="WidgetView.h">
-      <Filter>组件</Filter>
-    </ClInclude>
     <ClInclude Include="Widget.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="WidgetContainerViewAssociateableProxy.h">
-      <Filter>可关联代理\容器代理</Filter>
+    <ClInclude Include="WView.h">
+      <Filter>组件</Filter>
     </ClInclude>
-    <ClInclude Include="WidgetViewContainerAssociateableProxy.h">
-      <Filter>可关联代理\组件代理</Filter>
+    <ClInclude Include="WContainer.h">
+      <Filter>容器</Filter>
+    </ClInclude>
+    <ClInclude Include="WContainerAssociateViewProxy.h">
+      <Filter>可关联代理\容器代理\关联根组件</Filter>
+    </ClInclude>
+    <ClInclude Include="WViewAssociateContainerProxy.h">
+      <Filter>可关联代理\组件代理\关联容器</Filter>
+    </ClInclude>
+    <ClInclude Include="WViewAssociateParentProxy.h">
+      <Filter>可关联代理\组件代理\关联父组件</Filter>
+    </ClInclude>
+    <ClInclude Include="WViewAssociateChildrenProxy.h">
+      <Filter>可关联代理\组件代理\关联子组件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

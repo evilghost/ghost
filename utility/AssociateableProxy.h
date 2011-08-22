@@ -8,12 +8,16 @@ namespace ghost{
 
 	namespace utility{
 
-		template<typename T>
+		template<typename PT>
 		class AssociateableProxy : public Associateable{
-			T& m_obj;
+		public:
+			typedef PT ProxiedType;
+
+		private:
+			ProxiedType& m_obj;
 
 		public:
-			explicit AssociateableProxy(T& obj)
+			explicit AssociateableProxy(ProxiedType& obj)
 				: m_obj(obj)
 			{
 
@@ -24,7 +28,7 @@ namespace ghost{
 			}
 
 		public:
-			T& GetProxiedObject()
+			ProxiedType& GetProxiedObject()
 			{
 				return m_obj;
 			}

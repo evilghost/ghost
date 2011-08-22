@@ -9,9 +9,12 @@ public:
 
 void Test()
 {
-	ghost::widget::View view;
+	ghost::widget::View rootView;
 	TestContainer container;
-	view.SetContainer(&container);
+	rootView.SetContainer(&container);
+
+	ghost::widget::View view1;
+	view1.SetParent(&rootView);
 }
 
 int main()

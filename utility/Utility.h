@@ -7,6 +7,7 @@
 #include "Cloneable.h"
 #include "Associateable.h"
 #include "AssociateableProxy.h"
+#include "SingleAssociateablePorxy.h"
 
 #ifdef _DEBUG
 

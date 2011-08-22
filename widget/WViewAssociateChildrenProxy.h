@@ -1,40 +1,36 @@
 
-#ifndef WIDGET_CONTAINER_CONTAINER_ASSOCIATEABLE_PROXY_H
-#define WIDGET_CONTAINER_CONTAINER_ASSOCIATEABLE_PROXY_H
+#ifndef WIDGET_CONTAINER_ASSOCIATE_CHILDREN_PROXY_H
+#define WIDGET_CONTAINER_ASSOCIATE_CHILDREN_PROXY_H
 
 #include "../utility/Utility.h"
+#include "WView.h"
+#include "WViewAssociateParentProxy.h"
+#include <list>
 
 namespace ghost{
 
 	namespace widget{
 
-		class View;
-		class Container;
-		namespace container_proxy{
-			class ViewAssociateable;
-		} // namespace container_proxy
-
 		namespace view_proxy{
 
-			class ContainerAssociateable
+			class AssociateChildren
 				: private utility::NoCopyable
 				, public utility::AssociateableProxy<View>
 			{
-			protected:
-				container_proxy::ViewAssociateable* m_pContainerProxy;
+			public:
+				typedef std::list<view_proxy::AssociateParent*> ChildrenContainer;
+			private:
+				ChildrenContainer* m_pChildren;
 
 			public:
-				explicit ContainerAssociateable(View& view);
-				virtual ~ContainerAssociateable();
-
-			public:
-				Container* GetContainer() const;
+				explicit AssociateChildren(View& view);
+				virtual ~AssociateChildren();
 
 			public: // 实现Associateable
 				virtual bool AllowAssociatingWidth(Associateable* pObj) const;
 				virtual void DisassociateFromAll();
 
-			private: // 实现Associateable
+			protected: // 实现Associateable
 				virtual bool IsAssociatedWidth(Associateable* pObj) const;
 				virtual void DoAssociateWith(Associateable* pObj);
 				virtual void DoDisassociateFrom(Associateable* pObj);
@@ -46,4 +42,4 @@ namespace ghost{
 
 } // namespace ghost
 
-#endif // WIDGET_CONTAINER_CONTAINER_ASSOCIATEABLE_PROXY_H
+#endif // WIDGET_CONTAINER_ASSOCIATE_CHILDREN_PROXY_H

@@ -23,7 +23,7 @@ namespace ghost{
 			/**派生类必须实现此接口，并在自身析构时调用*/
 			virtual void DisassociateFromAll() = 0;
 
-		private:
+		protected:
 			virtual bool IsAssociatedWidth(Associateable* pObj) const = 0;
 			virtual void DoAssociateWith(Associateable* pObj) = 0;
 			virtual void DoDisassociateFrom(Associateable* pObj) = 0;

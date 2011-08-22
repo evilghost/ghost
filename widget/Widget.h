@@ -2,8 +2,8 @@
 #ifndef WIDGET_H
 #define WIDGET_H
 
-#include "WidgetContainer.h"
-#include "WidgetView.h"
+#include "WContainer.h"
+#include "WView.h"
 
 #ifdef _DEBUG
 

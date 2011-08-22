@@ -19,6 +19,9 @@
     <Filter Include="可关联对象\代理">
       <UniqueIdentifier>{5aaf3593-9424-4edb-9031-1a5afa0b84f5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="可关联对象\代理\单代理">
+      <UniqueIdentifier>{dda80641-54be-4b9c-9608-8c41a1f9eead}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Associateable.cpp">
@@ -43,6 +46,9 @@
     </ClInclude>
     <ClInclude Include="AssociateableProxy.h">
       <Filter>可关联对象\代理</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleAssociateablePorxy.h">
+      <Filter>可关联对象\代理\单代理</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
